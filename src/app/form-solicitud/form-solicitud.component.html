@@ -1,0 +1,38 @@
+<form [formGroup]="formulario" (submit)="enviarSolicitud()">
+    <div>
+      <label for="id-solicitud">Numero de la Solicitud:hidden</label>
+      <input type="text" id="id-solicitud" formControlName ="idSolicitud">
+    </div>
+    <div>
+        <label for="fecha-solicitud">Fecha de Solicitud:</label>
+        <input type="date" id="fecha-solicitud" formControlName="fechaSolicitud">
+      </div>
+    
+      <div>
+        <label for="estado">Estado:</label>
+        <input type="text" id="estado" formControlName="estado">
+      </div>
+    
+      <div>
+        <label for="id-vivienda">ID de Vivienda:</label>
+        <input type="text" id="id-vivienda" formControlName="idVivienda">
+      </div>
+    
+      <div>
+        <label for="numero-expediente">Número de Expediente:</label>
+        <input type="text" id="numero-expediente" formControlName="numeroExpediente">
+      </div>
+    
+      <div>
+        <label for="tipo-solicitud">Tipo de Solicitud:</label>
+        <input type="text" id="tipo-solicitud" formControlName="tipoSolicitud">
+      </div>
+    
+      <div>
+        <label for="id-sector">ID de Sector:</label>
+        <input type="text" id="id-sector" formControlName="idSector">
+      </div>
+
+    <button type="submit">Enviar</button>
+  </form>
+  
