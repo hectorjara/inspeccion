@@ -1,10 +1,11 @@
 import { Component } from '@angular/core';
 import { FormSolicitudComponent } from "../form-solicitud/form-solicitud.component";
+import { PersonaFormComponent } from "../form-persona/form-persona.component";
 
 @Component({
   selector: 'app-pagina-principal',
   standalone: true,
-  imports: [FormSolicitudComponent],
+  imports: [FormSolicitudComponent, PersonaFormComponent],
   templateUrl: './pagina-principal.component.html',
   styleUrl: './pagina-principal.component.css'
 })
