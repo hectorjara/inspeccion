@@ -1,6 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
 import { SolicitandoService } from '../solicitando.service';
+import { Persona } from '../persona'; 
 
 @Component({
   selector: 'app-form-persona',
@@ -19,12 +20,8 @@ export class PersonaFormComponent {
   });
 
   enviarSolicitud() {
-    this.solicitandoServicio.guardarPersona(
-      this.formularioPersona.value.nombre ?? '',
-      this.formularioPersona.value.apellido ?? '',
-      this.formularioPersona.value.telefono ?? '',
-      this.formularioPersona.value.email ?? ''
-    ).subscribe({
+    const persona: Persona = this.formularioPersona.value as Persona;
+    this.solicitandoServicio.guardarPersona(persona).subscribe({
       next: (res) => {
         console.log('Respuesta: ', res);
       }

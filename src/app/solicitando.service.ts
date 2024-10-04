@@ -1,6 +1,7 @@
 import { inject, Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { Persona } from './persona'; 
 
 
 @Injectable({
@@ -18,9 +19,8 @@ export class SolicitandoService {
     console.log('Solicitud Guardada y estado: ', estado);
   }
 
-  guardarPersona(nombre: string, apellido: string, telefono: string, email: string): Observable<any>{
+  guardarPersona(persona: Persona): Observable<any>{
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
-    const personaData = { nombre, apellido, telefono, email };
-    return this._http.post(this.apiUrl, personaData, { headers } );    
+    return this._http.post<Persona>(this.apiUrl, persona, { headers } );    
   }
 }
