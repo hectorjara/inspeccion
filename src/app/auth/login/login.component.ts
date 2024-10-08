@@ -1,5 +1,5 @@
 import { Component, inject } from '@angular/core';
-import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
+import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { AuthService } from '../../servicios/auth.service';
 import { Usuario } from '../../models/usuario'
 import { Router, RouterModule } from '@angular/router';
@@ -15,19 +15,22 @@ export class LoginComponent {
   authService = inject(AuthService);
   router = inject(Router);
   formularioLogin = new FormGroup({
-    email: new FormControl(''),
-    contrasenia: new FormControl('')
+    email: new FormControl('', [Validators.required, Validators.email]),
+    contrasenia: new FormControl('', [Validators.required])
   });
 
   ingresar() {
-    const usuario: Usuario = this.formularioLogin.value as Usuario;
-    this.authService.loginUsuario(usuario).subscribe({
-      next: (res) => {
-        if (this.authService.estaLogueado()){
-          this.router.navigate(['/personas']);
+    if(this.formularioLogin.valid){
+      const usuario: Usuario = this.formularioLogin.value as Usuario;
+      this.authService.loginUsuario(usuario).subscribe({
+        next: (res) => {
+          if (this.authService.estaLogueado()){
+            this.router.navigate(['/personas']);
+          }
+          console.log('Respuesta: ', res);
         }
-        console.log('Respuesta: ', res);
-      }
-    });
+      });
+    }
+
   }
 }
