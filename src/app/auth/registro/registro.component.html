@@ -1,0 +1,85 @@
+<main role="main">  
+    <section>
+      <div class="container">
+  
+        <div class="row m-b-2">
+          <div class="col-md-6 col-md-offset-3">
+            <h4 class="activities-sidbar">Registrar Nuevo Usuario</h4>
+          </div>      
+        </div>
+  
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="form-container">
+                <form [formGroup]="formularioRegistro" (submit)="registrar()">
+  
+                    <div class="row">
+                    <div class="col-md-10 form-group item-form">
+                        <label for="nombre_usuario">Nombre de usuario:</label>
+                        <input class="form-control" type="text" id="nombre_usuario" formControlName="nombre_usuario">
+                    </div>
+                    </div>
+                
+                    <div class="row">
+                    <div class="col-md-10 form-group item-form">
+                        <label for="email">Email:</label>
+                        <input class="form-control" type="email" id="email" formControlName="email">
+                    </div>
+                    </div>
+                
+                    <div class="row">
+                    <div class="col-md-10 form-group item-form">
+                        <label for="contrasenia">Contraseña:</label>
+                        <input class="form-control" type="password" id="contrasenia" formControlName="contrasenia">
+                    </div>
+                    </div>
+                
+                    <div class="row">
+                    <div class="col-md-10 form-group item-form">
+                        <label for="rol">Rol:</label>
+                        <select class="form-control" id="rol" formControlName="rol">
+                        <option value="">Seleccione un rol</option>
+                        <option value="sector">Sector</option>
+                        <option value="inspector">Inspector</option>
+                        </select>
+                    </div>
+                    </div>
+                
+                    <div class="row">
+                    <div class="col-md-10 form-group item-form">
+                        <label for="nombres">Nombres:</label>
+                        <input class="form-control" type="text" id="nombres" formControlName="nombres">
+                    </div>
+                    </div>
+
+                    <div class="row">
+                    <div class="col-md-10 form-group item-form">
+                        <label for="apellidos">Apellidos:</label>
+                        <input class="form-control" type="text" id="apellidos" formControlName="apellidos">
+                    </div>
+                    </div>
+                  
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <button class="btn btn-success" type="submit">Ingresar</button>
+                      </div>      
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-10">
+                            <hr>
+                        </div>
+                    </div>
+                  </form>
+                  <div class="row">
+                    <div class="col-xs-12">
+                        <p><a href="#">Recuperar mi contraseña</a></p>
+                    </div>
+                </div>
+            </div>  
+          </div>      
+        </div>
+      
+      </div>
+    </section>
+  </main>

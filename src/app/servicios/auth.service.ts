@@ -8,6 +8,7 @@ import { Usuario } from '../models/usuario'
 })
 export class AuthService {
   private apiUrlLogin = 'http://localhost:3000/api/login';
+  private apiUrlRegistro = 'http://localhost:3000/api/registrarse';
 
   private readonly _http = inject(HttpClient);
   constructor() { }
@@ -20,12 +21,17 @@ export class AuthService {
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
     return this._http.post<any>(this.apiUrlLogin, usuario, { headers } )
     .pipe(tap((res) => { //quí se utiliza el operador tap, permite ejecutar un efecto secundario sin modificar el valor del observable. A futuro iria un token de respuesta.
-      if (res.msg==='inicio de sesion exitoso'){ //A cambiar
+      if (res.msg==='Usuario registrado exitosamente'){ //A cambiar
       localStorage.setItem('UsuarioAutenticado', "Admin")//Cambiar por un token a futuro
       }
       else if(res.msg==='Nombre de Usuario o Contraseña incorrectos.') {
         console.log('ni idea')
       }      
     }));
+  }
+
+  registroUsuario(usuario: Usuario): Observable<any>{
+    const headers = new HttpHeaders({'Content-Type': 'application/json'});
+    return this._http.post<any>(this.apiUrlRegistro, usuario, { headers } );
   }
 }

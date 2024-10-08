@@ -3,6 +3,7 @@ import { LoginComponent } from './auth/login/login.component';
 import { PersonaFormComponent } from './form-persona/form-persona.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
 import { authGuard } from './auth/auth.guard';
+import { RegistroComponent } from './auth/registro/registro.component';
 
 export const routes: Routes = [
     {
@@ -11,6 +12,10 @@ export const routes: Routes = [
     {
         path: 'login',
         component: LoginComponent
+    },
+    {
+        path: 'registro',
+        component: RegistroComponent
     },
     {
         path: 'personas',

@@ -5,24 +5,28 @@ import { Usuario } from '../../models/usuario'
 import { Router, RouterModule } from '@angular/router';
 
 @Component({
-  selector: 'app-login',
+  selector: 'app-registro',
   standalone: true,
   imports: [ReactiveFormsModule],
-  templateUrl: './login.component.html',
-  styleUrl: './login.component.css'
+  templateUrl: './registro.component.html',
+  styleUrl: './registro.component.css'
 })
-export class LoginComponent {
+export class RegistroComponent {
   authService = inject(AuthService);
   router = inject(Router);
-  formularioLogin = new FormGroup({
+  formularioRegistro = new FormGroup({
+    nombre_usuario: new FormControl('', [Validators.required]),
     email: new FormControl('', [Validators.required, Validators.email]),
-    contrasenia: new FormControl('', [Validators.required])
+    contrasenia: new FormControl('', [Validators.required, Validators.minLength(8)]),
+    rol: new FormControl('', [Validators.required]),
+    nombres: new FormControl('', [Validators.required]),
+    apellidos: new FormControl('', [Validators.required])
   });
 
-  ingresar() {
-    if(this.formularioLogin.valid){
-      const usuario: Usuario = this.formularioLogin.value as Usuario;
-      this.authService.loginUsuario(usuario).subscribe({
+  registrar() {
+    if(this.formularioRegistro.valid){
+      const usuario: Usuario = this.formularioRegistro.value as Usuario;
+      this.authService.registroUsuario(usuario).subscribe({
         next: (res) => {
           if (this.authService.estaLogueado()){
             this.router.navigate(['/registro']);
