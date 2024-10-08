@@ -36,6 +36,9 @@ export class SolicitudInspeccionComponent {
       this.solicitudInspService.crearSolicitud(nuevaSolicitud).subscribe(
         response => {
           console.log('Solicitud creada con éxito', response);
+          this.solicitudInspService.setResponse(response);
+          this.router.navigate(['/solicitud-respuesta']);
+
           // Aquí puedes agregar lógica adicional, como mostrar un mensaje de éxito o redireccionar
         },
         error => {

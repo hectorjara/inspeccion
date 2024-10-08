@@ -1,0 +1,104 @@
+<main role="main">    
+    <div class="container">
+        <section>
+            <div class="row">
+                <div class="col-md-8 col-md-offset-2">
+                    <h1>{{respuesta.message}}</h1>
+                    <hr>
+
+                    <form>
+                        <fieldset>
+                          <legend class="m-b-2">
+                            <h3>{{detalle}}</h3>
+                       
+                          </legend>
+                          <section class="bg-white p-x-3">
+                            <div class="row ">
+                                <div class="">
+                                    <a href="#" class="btn btn-success p-y-1">DESCARGÁ LA SOLICITUD (PDF)</a>
+                                </div>
+                            </div>
+                            <div class="row">
+                                <div class="">
+                                    <hr>
+                                </div>
+                                <div class="row m-y-1">
+                                    <div class="col-md-12">
+                                    <h4>Cargaste estos datos del Propietario/a:</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                    <p><strong>Nombres</strong></p>
+                                    <p>{{respuesta.persona.nombre}}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <p><strong>Apellidos</strong></p>
+                                    <p>{{respuesta.persona.apellido}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                    <p><strong>Telefono</strong></p>
+                                    <p>{{respuesta.persona.telefono}}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <p><strong>Email</strong></p>
+                                    <p>{{respuesta.persona.email}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="">
+                                    <hr>
+                                </div>
+                                <div class="row m-y-1">
+                                    <div class="col-md-12">
+                                    <h4>Cargaste estos datos de la Vivienda:</h4>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                    <p><strong>Barrio</strong></p>
+                                    <p>{{respuesta.vivienda.barrio}}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <p><strong>Sector</strong></p>
+                                    <p>{{respuesta.vivienda.sector}}</p>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-6">
+                                    <p><strong>Manzana</strong></p>
+                                    <p>{{respuesta.vivienda.manzana}}</p>
+                                    </div>
+                                    <div class="col-md-6">
+                                    <p><strong>Lote</strong></p>
+                                    <p>{{respuesta.vivienda.lote}}</p>
+                                    </div>
+                                </div>
+
+                                <div class="row m-t-2">
+                                    <div class="col-md-12">
+                                    <a href="#" class="btn btn-link p-y-1">Ver Solicitudes</a>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    <hr>
+                                    </div>
+
+                                </div>
+                                <div class="row">
+                                    <div class="col-md-12">
+                                    <p class="text-justify" style="font-size: 15px; color: #555555;">Los datos deben ser confirmados por el organismo correspondiente.</p>
+                                    </div>
+                                </div>
+                            </div>
+                          </section>
+                        </fieldset>                       
+                       </form>
+                </div>
+            </div>
+        </section>
+    </div>
+</main>

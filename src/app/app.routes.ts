@@ -5,6 +5,7 @@ import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.co
 import { authGuard } from './auth/auth.guard';
 import { RegistroComponent } from './auth/registro/registro.component';
 import { SolicitudInspeccionComponent } from './solicitud-inspeccion/solicitud-inspeccion.component';
+import { SolicitudRespuestaComponent } from './solicitud-respuesta/solicitud-respuesta.component';
 
 export const routes: Routes = [
     {
@@ -25,6 +26,9 @@ export const routes: Routes = [
     {
         path: 'solicitud',
         component:SolicitudInspeccionComponent
+    },
+    {
+        path: 'solicitud-respuesta',
+        component: SolicitudRespuestaComponent
     }
-
 ];
