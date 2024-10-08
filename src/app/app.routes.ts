@@ -4,6 +4,7 @@ import { PersonaFormComponent } from './form-persona/form-persona.component';
 import { PaginaPrincipalComponent } from './pagina-principal/pagina-principal.component';
 import { authGuard } from './auth/auth.guard';
 import { RegistroComponent } from './auth/registro/registro.component';
+import { SolicitudInspeccionComponent } from './solicitud-inspeccion/solicitud-inspeccion.component';
 
 export const routes: Routes = [
     {
@@ -20,5 +21,10 @@ export const routes: Routes = [
     {
         path: 'personas',
         component:PaginaPrincipalComponent
+    },
+    {
+        path: 'solicitud',
+        component:SolicitudInspeccionComponent
     }
+
 ];
