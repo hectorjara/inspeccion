@@ -19,9 +19,9 @@ export class AuthService {
   loginUsuario(usuario: Usuario): Observable<any>{
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
     return this._http.post<any>(this.apiUrlLogin, usuario, { headers } )
-    .pipe(tap((res) => { //quí se utiliza el operador tap, permite ejecutar un efecto secundario sin modificar el valor del observable. A futuro irian un token de respuesta.
-      if (res.msg==='inicio de sesion exitoso'){ //Cambiar por un token a futuro
-      localStorage.setItem('UsuarioAutenticado', "Admin")
+    .pipe(tap((res) => { //quí se utiliza el operador tap, permite ejecutar un efecto secundario sin modificar el valor del observable. A futuro iria un token de respuesta.
+      if (res.msg==='inicio de sesion exitoso'){ //A cambiar
+      localStorage.setItem('UsuarioAutenticado', "Admin")//Cambiar por un token a futuro
       }
       else if(res.msg==='Nombre de Usuario o Contraseña incorrectos.') {
         console.log('ni idea')
