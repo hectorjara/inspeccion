@@ -1,0 +1,42 @@
+<main role="main">  
+    <section>
+      <div class="container">
+  
+        <div class="row m-b-2">
+          <div class="col-md-6 col-md-offset-3">
+            <h4 class="activities-sidbar">Ingreso a la Plataforma</h4>
+          </div>      
+        </div>
+  
+        <div class="row">
+          <div class="col-md-6 col-md-offset-3">
+            <div class="form-container">
+                <form [formGroup]="formularioLogin" (submit)="ingresar()">
+  
+                    <div class="row">
+                        <div class="col-md-10 form-group item-form">
+                          <label for="email">Email:</label>
+                          <input class="form-control" type="email" id="email" formControlName="email">
+                        </div>
+                      </div>
+                
+                    <div class="row">
+                      <div class="col-md-10 form-group item-form">
+                        <label for="contrasenia">Contraseña:</label>
+                        <input class="form-control" type="text" id="contrasenia" formControlName="contrasenia">
+                      </div>
+                    </div>
+                  
+                    <div class="row">
+                      <div class="col-sm-3">
+                        <button class="btn btn-success" type="submit">Ingresar</button>
+                      </div>      
+                    </div>    
+                  </form>
+            </div>  
+          </div>      
+        </div>
+      
+      </div>
+    </section>
+  </main>
