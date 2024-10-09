@@ -37,7 +37,7 @@ export class SolicitudRespuestaComponent implements OnInit{
   
       let position = 0;
       pdf.addImage(contentDataURL, 'PNG', 0, position, imgWidth, imgHeight);
-      pdf.save('dynamicData.pdf'); // Generated PDF
+      pdf.save('Solictud_Inspeccion'+this.respuesta.vivienda.lote+'.pdf'); // Generated PDF
     });
   }
 }
