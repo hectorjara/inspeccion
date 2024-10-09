@@ -5,19 +5,21 @@
                 <div class="col-md-8 col-md-offset-2">
                     <h1>{{respuesta.message}}</h1>
                     <hr>
-
-                    <form>
+                    <div class="row ">
+                        <div class="">
+                            <button (click)="generatePDF()" class="btn btn-success p-y-1">DESCARGÁ LA SOLICITUD (PDF)</button>
+                        </div>
+                    </div>
+                    <div id="contentToConvert">
+                    <form onsubmit="return false;">
                         <fieldset>
                           <legend class="m-b-2">
                             <h3>{{detalle}}</h3>
                        
                           </legend>
                           <section class="bg-white p-x-3">
-                            <div class="row ">
-                                <div class="">
-                                    <a href="#" class="btn btn-success p-y-1">DESCARGÁ LA SOLICITUD (PDF)</a>
-                                </div>
-                            </div>
+
+                            
                             <div class="row">
                                 <div class="">
                                     <hr>
@@ -76,6 +78,7 @@
                                     <p>{{respuesta.vivienda.lote}}</p>
                                     </div>
                                 </div>
+                                
 
                                 <div class="row m-t-2">
                                     <div class="col-md-12">
@@ -97,6 +100,7 @@
                           </section>
                         </fieldset>                       
                        </form>
+                    </div>
                 </div>
             </div>
         </section>
