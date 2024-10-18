@@ -14,6 +14,10 @@ export class SolicitudInspeccionService {
 
   constructor() { }
 
+  obtenerSolicitudes(){
+    return this._http.get<any>(this.apiUrl);
+  }
+
   crearSolicitud(solicitud: SolicitudInspeccion): Observable<any>{
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
     return this._http.post<any>(this.apiUrl, solicitud, { headers } );

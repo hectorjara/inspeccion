@@ -6,6 +6,7 @@ import { authGuard } from './auth/auth.guard';
 import { RegistroComponent } from './auth/registro/registro.component';
 import { SolicitudInspeccionComponent } from './solicitud-inspeccion/solicitud-inspeccion.component';
 import { SolicitudRespuestaComponent } from './solicitud-respuesta/solicitud-respuesta.component';
+import { SolicitudesComponent } from './solicitudes/solicitudes.component';
 
 export const routes: Routes = [
     {
@@ -21,12 +22,16 @@ export const routes: Routes = [
         canActivate: [authGuard]
     },
     {
-        path: 'personas',
+        path: 'inicio',
         component:PaginaPrincipalComponent
     },
     {
         path: 'solicitud',
         component:SolicitudInspeccionComponent
+    },
+    {
+        path: 'solicitudes',
+        component:SolicitudesComponent
     },
     {
         path: 'solicitud-respuesta',
