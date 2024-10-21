@@ -1,6 +1,7 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { SolicitudInspeccionService } from '../../servicios/solicitud-inspeccion.service';
 import { CommonModule } from '@angular/common';
+import { Router } from '@angular/router'
 
 @Component({
   selector: 'app-solicitudes',
@@ -10,7 +11,9 @@ import { CommonModule } from '@angular/common';
   styleUrl: './solicitudes.component.css'
 })
 export class SolicitudesComponent implements OnInit {
+
   solicitudInspService = inject(SolicitudInspeccionService);
+  router = inject(Router);
   solicitudes: any[] = [];
 
   ngOnInit(): void {
@@ -22,6 +25,10 @@ export class SolicitudesComponent implements OnInit {
     .subscribe(data => {
       this.solicitudes = data;
     })
+  }
+
+  navegarA() {
+    this.router.navigate(['/solicitudes/registrar']);
   }
 
 }
