@@ -1,6 +1,6 @@
 import { Component, inject, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
-import { SolicitudInspeccionService } from '../servicios/solicitud-inspeccion.service';
+import { SolicitudInspeccionService } from '../../servicios/solicitud-inspeccion.service';
 import { jsPDF } from 'jspdf';
 import html2canvas from 'html2canvas';
 

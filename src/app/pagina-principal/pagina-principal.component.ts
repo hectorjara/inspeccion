@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { FormSolicitudComponent } from "../form-solicitud/form-solicitud.component";
+import { FormSolicitudComponent } from "../abmSolicitudInspeccion/form-solicitud/form-solicitud.component";
 import { PersonaFormComponent } from "../form-persona/form-persona.component";
 
 @Component({

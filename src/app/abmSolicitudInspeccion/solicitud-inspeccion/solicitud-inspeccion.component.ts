@@ -1,7 +1,7 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
-import { SolicitudInspeccion } from '../models/solicitud-inspeccion';
-import { SolicitudInspeccionService } from '../servicios/solicitud-inspeccion.service';
+import { SolicitudInspeccion } from '../../models/solicitud-inspeccion';
+import { SolicitudInspeccionService } from '../../servicios/solicitud-inspeccion.service';
 import { Router, RouterModule } from '@angular/router';
 
 @Component({

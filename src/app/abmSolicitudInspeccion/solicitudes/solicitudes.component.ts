@@ -1,5 +1,5 @@
 import { Component, inject, OnInit } from '@angular/core';
-import { SolicitudInspeccionService } from '../servicios/solicitud-inspeccion.service';
+import { SolicitudInspeccionService } from '../../servicios/solicitud-inspeccion.service';
 import { CommonModule } from '@angular/common';
 
 @Component({

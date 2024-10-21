@@ -1,6 +1,6 @@
 import { Component, inject } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { SolicitandoService } from '../solicitando.service';
+import { SolicitandoService } from '../servicios/solicitando.service';
 import { Persona } from '../persona'; 
 
 @Component({
