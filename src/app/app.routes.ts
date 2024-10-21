@@ -31,7 +31,7 @@ export const routes: Routes = [
     },
     {
         path: 'solicitudes',
-        component:SolicitudesComponent
+        loadChildren: () => import('../app/abmSolicitudInspeccion/abmSolicitudes.routes') ,
     },
     {
         path: 'solicitud-respuesta',
