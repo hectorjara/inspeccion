@@ -17,7 +17,36 @@
           <div class="col-md-6 col-md-offset-3" *ngFor="let solicitud of solicitudes">
             <a class="panel panel-default" href="#">
                 <div class="panel-body">
-                    <h3>{{solicitud.numero_expediente}}</h3>
+                  <div class="row">
+                    <div class="col-md-4">
+                        <h6>Tipo de Solicitud: </h6><h6>{{ solicitud.tipo_solicitud }}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>Número de Expediente: </h6><h6>{{ solicitud.numero_expediente }}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>Estado: </h6><h6>{{ solicitud.estado }}</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6>Barrio: </h6><h6>{{ solicitud.id_vivienda }}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>Sector: </h6><h6>{{ solicitud.id_vivienda }}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>Manzana: </h6><h6>{{ solicitud.id_vivienda }}</h6>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-md-4">
+                        <h6>Lote: </h6><h6>{{ solicitud.id_vivienda }}</h6>
+                    </div>
+                    <div class="col-md-4">
+                        <h6>Fecha de Solicitud: </h6><h6>{{ solicitud.fecha_solicitud | date:'dd/MM/yyyy' }}</h6>
+                    </div>
+                </div>
                 </div>
             </a>
           </div>      
