@@ -21,10 +21,10 @@ export class AuthService {
     const headers = new HttpHeaders({'Content-Type': 'application/json'});
     return this._http.post<any>(this.apiUrlLogin, usuario, { headers } )
     .pipe(tap((res) => { //quí se utiliza el operador tap, permite ejecutar un efecto secundario sin modificar el valor del observable. A futuro iria un token de respuesta.
-      if (res.msg==='inicio de sesion exitoso'){ //A cambiar
-      localStorage.setItem('UsuarioAutenticado', "Admin")//Cambiar por un token a futuro
+      if (res.message==='Login exitoso'){ //A cambiar
+      localStorage.setItem('UsuarioAutenticado',res.token)//Cambiar por un token a futuro
       }
-      else if(res.msg==='Nombre de Usuario o Contraseña incorrectos.') {
+      else if(res.message==='Nombre de Usuario o Contraseña incorrectos.') {
         console.log('No logueado')
       }      
     }));

@@ -16,7 +16,7 @@ export class LoginComponent {
   router = inject(Router);
   formularioLogin = new FormGroup({
     email: new FormControl('', [Validators.required, Validators.email]),
-    contrasenia: new FormControl('', [Validators.required])
+    contraseña: new FormControl('', [Validators.required])
   });
 
   ingresar() {
