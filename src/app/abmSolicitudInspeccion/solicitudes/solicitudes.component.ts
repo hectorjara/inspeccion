@@ -12,6 +12,7 @@ import { Router } from '@angular/router'
 })
 export class SolicitudesComponent implements OnInit {
 
+
   solicitudInspService = inject(SolicitudInspeccionService);
   router = inject(Router);
   solicitudes: any[] = [];
@@ -29,6 +30,15 @@ export class SolicitudesComponent implements OnInit {
 
   navegarA() {
     this.router.navigate(['/solicitudes/registrar']);
+  }
+
+  eliminarSolicitud(id_solicitud:number) {
+    this.solicitudInspService.eliminarSolicitud(id_solicitud)
+    .subscribe(data => {
+      if(data.message==="Solicitud de inspección eliminada correctamente."){
+        this.router.navigate(['/inicio']);
+      };
+    })
   }
 
 }

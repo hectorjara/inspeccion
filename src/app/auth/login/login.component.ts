@@ -25,7 +25,7 @@ export class LoginComponent {
       this.authService.loginUsuario(usuario).subscribe({
         next: (res) => {
           if (this.authService.estaLogueado()){
-            this.router.navigate(['/registro']);
+            this.router.navigate(['/inicio']);
           }
           console.log('Respuesta: ', res);
         }

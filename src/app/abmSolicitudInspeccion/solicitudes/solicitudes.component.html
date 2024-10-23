@@ -1,57 +1,65 @@
 <main role="main">  
-    <section>
-      <div class="container">
-  
-        <div class="row m-b-2">
-          <div class="col-md-6 col-md-offset-3">
-            <h4 class="activities-sidbar">Lista de Solicitudes de Inspección</h4>
-          </div>
-          <div class="row">
-            <div class="col-sm-3">
-              <a><button (click)="navegarA()" class="btn btn-success">Agregar Solicitud</button></a>
-            </div>
+  <section>
+    <div class="container">
+
+      <div class="row m-b-2">
+        <div class="col-md-6 col-md-offset-3">
+          <h4 class="activities-sidbar">Lista de Solicitudes de Inspección</h4>
+        </div>
+        <div class="row">
+          <div class="col-sm-3">
+            <a><button (click)="navegarA()" class="btn btn-success">Agregar Solicitud</button></a>
           </div>
         </div>
-  
-        <div class="row">
-          <div class="col-md-6 col-md-offset-3" *ngFor="let solicitud of solicitudes">
-            <a class="panel panel-default" href="#">
+      </div>
+
+      <div class="row">
+        <div class="col-md-6 col-md-offset-3" *ngFor="let solicitud of solicitudes">
+          <div class="row align-items-center">
+            <div class="col-md-10">
+              <a class="panel panel-default" href="#">
                 <div class="panel-body">
                   <div class="row">
                     <div class="col-md-4">
-                        <h6>Tipo de Solicitud: </h6><h6>{{ solicitud.tipo_solicitud }}</h6>
+                      <h6>Tipo de Solicitud: </h6><h6>{{ solicitud.tipo_solicitud }}</h6>
                     </div>
                     <div class="col-md-4">
-                        <h6>Número de Expediente: </h6><h6>{{ solicitud.numero_expediente }}</h6>
+                      <h6>Número de Expediente: </h6><h6>{{ solicitud.numero_expediente }}</h6>
                     </div>
                     <div class="col-md-4">
-                        <h6>Estado: </h6><h6>{{ solicitud.estado }}</h6>
+                      <h6>Estado: </h6><h6>{{ solicitud.estado }}</h6>
                     </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <h6>Barrio: </h6><h6>{{ solicitud.id_vivienda }}</h6>
+                    </div>
+                    <div class="col-md-4">
+                      <h6>Sector: </h6><h6>{{ solicitud.id_vivienda }}</h6>
+                    </div>
+                    <div class="col-md-4">
+                      <h6>Manzana: </h6><h6>{{ solicitud.id_vivienda }}</h6>
+                    </div>
+                  </div>
+                  <div class="row">
+                    <div class="col-md-4">
+                      <h6>Lote: </h6><h6>{{ solicitud.id_vivienda }}</h6>
+                    </div>
+                    <div class="col-md-4">
+                      <h6>Fecha de Solicitud: </h6><h6>{{ solicitud.fecha_solicitud | date:'dd/MM/yyyy' }}</h6>
+                    </div>
+                  </div>
                 </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <h6>Barrio: </h6><h6>{{ solicitud.id_vivienda }}</h6>
-                    </div>
-                    <div class="col-md-4">
-                        <h6>Sector: </h6><h6>{{ solicitud.id_vivienda }}</h6>
-                    </div>
-                    <div class="col-md-4">
-                        <h6>Manzana: </h6><h6>{{ solicitud.id_vivienda }}</h6>
-                    </div>
-                </div>
-                <div class="row">
-                    <div class="col-md-4">
-                        <h6>Lote: </h6><h6>{{ solicitud.id_vivienda }}</h6>
-                    </div>
-                    <div class="col-md-4">
-                        <h6>Fecha de Solicitud: </h6><h6>{{ solicitud.fecha_solicitud | date:'dd/MM/yyyy' }}</h6>
-                    </div>
-                </div>
-                </div>
-            </a>
-          </div>      
-        </div>
-      
+              </a>
+            </div>
+            <div class="col-md-2">
+              <a><button (click)="eliminarSolicitud(solicitud.id_solicitud)" class="btn btn-danger">Eliminar</button></a>
+            </div>
+          </div>
+        </div>      
       </div>
-    </section>
-  </main>
+
+    </div>
+  </section>
+</main>
+

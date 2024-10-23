@@ -33,4 +33,10 @@ export class SolicitudInspeccionService {
   getResponse(){
     return this.response;
   }
+
+  eliminarSolicitud(id_solicitud: number): Observable<any> {
+    const token = localStorage.getItem('UsuarioAutenticado');
+    const headers = new HttpHeaders({'Content-Type': 'application/json','Authorization': `Bearer ${token}`});
+    return this._http.delete<void>(`${this.apiUrl}/${id_solicitud}`, { headers });
+  }
 }
